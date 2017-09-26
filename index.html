@@ -1,145 +1,214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="rvibek, ">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>rvibek</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-        <title>rvibek // </title>
+    <meta name="twitter:card" content="summary">
+
+    <meta property="og:type" content="article">
 
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link href="./" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-</head>
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-<body>
-<div class="pure-g-r" id="layout">
-<div class="sidebar pure-u">
-    <div class="cover-img" style="background-image: url('http://res.cloudinary.com/rvibek-com-np/image/upload/v1486821421/ghostium800_y3y8pa.jpg')">
-        <div class="cover-body">
-            <header class="header">
-                <hgroup>
-                    <img src="theme/purepelican/images/logo.png">
-                    <h1 class="brand-main"><a href="/">rvibek</a></h1>
-                    <p class="tagline"></p>
-                    <p class="social">
-                        <a href="http://facebook.com/rvibek">
-                            <i class="fa fa-Facebook fa-3x"></i>
-                        </a>
-                        <a href="http://instagram.com/rvibek">
-                            <i class="fa fa-Instagram fa-3x"></i>
-                        </a>
-                    <p>
-                </hgroup>
-            </header>
+    <link rel="stylesheet" href="./theme/css/main.css" />
+    <link rel="stylesheet" href="./theme/css/pygment.css" />
+    <link rel="stylesheet" href="./theme/css/custom.css" />
+
+
+    <script src="./theme/js/jquery.min.js"></script>
+    <script src="./theme/js/modernizr.js"></script>
+
+    <script src="./theme/js/imageLoader.js"></script>
+    <script src="./theme/js/drawer.js"></script>
+    <script src="./theme/js/scripts.js"></script>
+
+
+
+  </head>
+  <body class="">
+
+
+    <button class="drawer-button" id="drawer-button" data-action="open-drawer"><i class="fa fa-bars"></i></button>
+    <div class="drawer-overlay"></div>
+    <nav class="drawer" tabindex="-1">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul class="drawer-list" role="navigation">
+
+          <li class="drawer-list-item">
+            <a data-pjax="" href="./">
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+
+
+          <li class="drawer-list-divider"></li>
+
+            <li class="drawer-list-item drawer-list-title">Pages</li>
+            <li class="drawer-list-divider"></li>
+
+
+          <li class="drawer-list-item drawer-list-title">Follow</li>
+            <li class="drawer-list-item">
+              <a data-pjax="" href="http://facebook.com/rvibek">
+                <i class="fa fa-facebook"></i> Facebook
+              </a>
+            </li>
+            <li class="drawer-list-item">
+              <a data-pjax="" href="http://instagram.com/rvibek">
+                <i class="fa fa-instagram"></i> Instagram
+              </a>
+            </li>
+
+
+          </ul>
         </div>
-    </div>
-</div>    <div class="pure-u-1">
-        <div class="content">
-            <!-- A wrapper for all the blog posts -->
-            <div class="posts">
-                <h1 class="content-subhead">
-                            Latest posts
-                </h1>
-<section class="post">
-    <header class="post-header">
-        <a href="/author/vibek-raj-maurya.html" title="See posts by Vibek Raj Maurya">
-        </a>
-        <h3><a class="post-title" href="/template-ghub-.html">Template GHub</a></h3>
-            <p class="post-meta"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum alias, explicabo ut dolorem nobis, temporibus ad repellat. Reprehenderit, corrupti? Aliquid perferendis rerum alias laudantium vel iure, nulla incidunt odio officia!</p></p>
-            <p class="post-meta">
-                in <a href="/category/misc.html">misc</a> &middot; Fri 24 March 2017
-            </p>
-    </header>
-</section><section class="post">
-    <header class="post-header">
-        <a href="/author/vibek-raj-maurya.html" title="See posts by Vibek Raj Maurya">
-        </a>
-        <h3><a class="post-title" href="/my-super-post.html">My super title</a></h3>
-            <p class="post-meta"><p>Short version for index and feeds</p></p>
-            <p class="post-meta">
-                in <a href="/category/python.html">Python</a> &middot; Sat 03 December 2016
-            </p>
-    </header>
-</section><section class="post">
-    <header class="post-header">
-        <a href="/author/vibek-raj-maurya.html" title="See posts by Vibek Raj Maurya">
-        </a>
-        <h3><a class="post-title" href="/different-worlds-closely-connected-.html">Different worlds, closely connected</a></h3>
-            <p class="post-meta"><p>A North-South Dialogue “Sustainable Development and Global Justice”, International Conference, Berlin, April 27–29, 2009</p></p>
-            <p class="post-meta">
-                in <a href="/category/blog.html">Blog</a> &middot; Thu 29 April 2010
-            </p>
-    </header>
-</section><section class="post">
-    <header class="post-header">
-        <a href="/author/vibek-raj-maurya.html" title="See posts by Vibek Raj Maurya">
-        </a>
-        <h3><a class="post-title" href="/coldplay-fanclub-calendar-.html">Coldplay Fanclub Calendar</a></h3>
-            <p class="post-meta"><p>Calendar by ColdplayZone Italy featuring the photo of Coldplay which I took in Roskilde Festival 2009.</p></p>
-            <p class="post-meta">
-                in <a href="/category/blog.html">Blog</a> &middot; Sun 10 January 2010
-            </p>
-    </header>
-</section><section class="post">
-    <header class="post-header">
-        <a href="/author/vibek-raj-maurya.html" title="See posts by Vibek Raj Maurya">
-        </a>
-        <h3><a class="post-title" href="/nature-thru.html">I'm just looking</a></h3>
-            <p class="post-meta"><p>Judges for this competition were Mani Lama, Nripa Dhoj Khadka, Pradeep Shakya and Raj Bhai Suwal.Winners of this competition were Mr. Vibek Raj Maurya (Grand prize winner)</p></p>
-            <p class="post-meta">
-                in <a href="/category/blog.html">Blog</a> &middot; Tue 17 July 2007
-            </p>
-    </header>
-</section><div class="pagination-wrapper content-subhead">
-    <div class="pagination">
-        <div class="pagination-left">
-                &nbsp;
-        </div>
-        <span>Page 1 / 1</span>
-        <div class="pagination-right">
-        </div>
-    </div>
-</div><footer class="footer">
-    <p>&copy; rvibek &ndash;
-        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
-        for <a href="http://blog.getpelican.com/">Pelican</a>
+      </nav>
+
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+
+
+              <aside role="banner" class="cover">
+                <div data-load-image="./theme/cover.jpg"  class="cover-image"></div>
+                <div class="cover-container">
+                  <a href="." class="cover-logo" data-pjax>
+                    <img src="./theme/logo.jpg" alt="Blog Logo">
+                  </a>
+                  <h1 class="cover-title">rvibek</h1>
+                </div>
+              </aside>
+
+
+
+              <section class="wrapper" tabindex="0">
+                <div class="wrapper-container">
+
+
+    <section class="post-list">
+<article class="post-item post tag-docs" role="article" itemtype="http://schema.org/BlogPosting" itemscope="">
+  <header class="post-item-header">
+    <h2 class="post-item-title" itemprop="name">
+      <a title="Pelicanium Test" data-pjax="" itemprop="url" href="./test-pelicanium-EN.html">
+        Pelicanium Test
+      </a>
+    </h2>
+  </header>
+  <section class="post-item-excerpt" itemprop="description">
+    <p>
+      
     </p>
+  </section>
+  <footer class="post-item-footer">
+<ul class="post-meta-list">
+  <li class="post-meta-item">
+    <time datetime="2017-09-26T20:42:22+02:00" itemprop="datePublished">
+      Tue 26 September 2017
+    </time>
+  </li>
+  <li class="post-meta-item">
+  </li>
 
 
+</ul>  </footer>
+</article><article class="post-item post tag-docs" role="article" itemtype="http://schema.org/BlogPosting" itemscope="">
+  <header class="post-item-header">
+    <h2 class="post-item-title" itemprop="name">
+      <a title="Template GHub" data-pjax="" itemprop="url" href="./template-ghub-.html">
+        Template GHub
+      </a>
+    </h2>
+  </header>
+  <section class="post-item-excerpt" itemprop="description">
+    <p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum alias, explicabo ut dolorem nobis, temporibus ad repellat. Reprehenderit, corrupti? Aliquid perferendis rerum alias laudantium vel iure, nulla incidunt odio officia!</p>
+    </p>
+  </section>
+  <footer class="post-item-footer">
+<ul class="post-meta-list">
+  <li class="post-meta-item">
+    <time datetime="2017-03-24T22:30:42+02:00" itemprop="datePublished">
+      Fri 24 March 2017
+    </time>
+  </li>
+  <li class="post-meta-item">
+  </li>
 
 
-</footer>            </div>
+</ul>  </footer>
+</article><article class="post-item post tag-docs" role="article" itemtype="http://schema.org/BlogPosting" itemscope="">
+  <header class="post-item-header">
+    <h2 class="post-item-title" itemprop="name">
+      <a title="My super title" data-pjax="" itemprop="url" href="./my-super-post.html">
+        My super title
+      </a>
+    </h2>
+  </header>
+  <section class="post-item-excerpt" itemprop="description">
+    <p>
+      <p>Short version for index and feeds</p>
+    </p>
+  </section>
+  <footer class="post-item-footer">
+<ul class="post-meta-list">
+  <li class="post-meta-item">
+    <time datetime="2016-12-03T10:20:00+02:00" itemprop="datePublished">
+      Sat 03 December 2016
+    </time>
+  </li>
+  <li class="post-meta-item">
+      <span itemprop="keywords"><a href="./tag/pelican.html">pelican</a></span>
+      <span itemprop="keywords"><a href="./tag/publishing.html">publishing</a></span>
+  </li>
+
+
+</ul>  </footer>
+</article>    </section>
+
+<p class="paginator">
+    Page 1 / 2
+        <a href="./index2.html">&raquo;</a>
+</p>
+
+
+<footer class="footer" role="contentinfo">
+  <small>
+    <p>
+      rvibek |  |
+        Vibek Raj Maurya
+    </p>
+    <p>
+      <a href="https://github.com/qmcs/pelicanium">Pelicanium</a>, a theme based on
+      <a href="http://ghostium.oswaldoacauan.com/">Ghostium Theme</a>.
+      Proudly powered by  <a href="http://getpelican.com/">Pelican</a>.
+    </p>
+  </small>
+</footer>                </div>
+              </section>
+          </div>
         </div>
-    </div>
-</div>
-    <script>
-        var $top = $('.go-top');
+      </div>
+    </main>
 
-        // Show or hide the sticky footer button
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 200) {
-                $top.fadeIn(200);
-            } else {
-                $top.fadeOut(200);
-            }
-        });
+    <script src="./theme/js//56c2364f.foot-scripts.min.js"></script>
 
-        // Animate the scroll to top
-        $top.click(function(event) {
-            event.preventDefault();
-            $('html, body').animate({scrollTop: 0}, 300);
-        })
 
-        // Makes sure that the href="#" attached to the <a> elements
-        // don't scroll you back up the page.
-        $('body').on('click', 'a[href="#"]', function(event) {
-            event.preventDefault();
-        });
-    </script>
-</body>
+  </body>
 </html>
