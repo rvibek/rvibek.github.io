@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Coldplay Fanclub Calendar</title>
+    <title>KML Districts of Nepal</title>
 
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -94,21 +94,19 @@
         <header class="post-header">
 <ul class="post-meta-list">
   <li class="post-meta-item">
-    <time datetime="2010-12-12T21:25:38+02:00" itemprop="datePublished">
-      Sun 12 December 2010
+    <time datetime="2010-07-10T21:25:38+03:00" itemprop="datePublished">
+      Sat 10 July 2010
     </time>
   </li>
   <li class="post-meta-item">
-      <span itemprop="keywords"><a href="./tag/coldplayzone.html">ColdplayZone</a></span>
-      <span itemprop="keywords"><a href="./tag/coldplay.html">Coldplay</a></span>
-      <span itemprop="keywords"><a href="./tag/roskilde.html">roskilde</a></span>
-      <span itemprop="keywords"><a href="./tag/roskilde-festival.html">Roskilde Festival</a></span>
-      <span itemprop="keywords"><a href="./tag/rvibek.html">rvibek</a></span>
-      <span itemprop="keywords"><a href="./tag/photography.html">photography</a></span>
+      <span itemprop="keywords"><a href="./tag/maps.html">maps</a></span>
+      <span itemprop="keywords"><a href="./tag/nepal.html">Nepal</a></span>
+      <span itemprop="keywords"><a href="./tag/kml.html">kml</a></span>
+      <span itemprop="keywords"><a href="./tag/gis.html">gis</a></span>
   </li>
 
 
-</ul>            <h1 itemprop="name headline" class="post-title"><a href="./coldplay-fanclub-calendar-.html" itemprop="url" data-pjax title="Coldplay Fanclub Calendar">Coldplay Fanclub Calendar</a></h1>
+</ul>            <h1 itemprop="name headline" class="post-title"><a href="./kml-districts-of-nepal-.html" itemprop="url" data-pjax title="KML Districts of Nepal">KML Districts of Nepal</a></h1>
           <!--h2 itemprop="about" class="post-subtitle"></h2-->
         </header>
         <aside class="post-side">
@@ -122,10 +120,21 @@
           </div>
         </aside>
         <div itemprop="articleBody" class="post-body">
-          <p>Calendar by <a href="http://www.coldplayzone.it/">ColdplayZone Italy</a> featuring the photo of Coldplay which I took in Roskilde Festival 2009.</p>
-<p>The same photo was also  selected among the <a href="http://roskilde-festival.dk/2009/frontpage/stories_from_2009/best_audience_photos_2009/">Best Audience Photos 2009</a> by Roskilde Festival.</p>
-<p><a href="http://docs.google.com/leaf?id=0B8IiFn2ckr59YmUxYTNlN2YtZjU3MC00YWJmLTk1NDItMzg4NDZjOWM5ZTc3&amp;hl=en_GB">Download ColdplayZone Calendar 2010</a></p>
-<p><img alt="Coldplay Calendar" src="http://i0.wp.com/res.cloudinary.com/rvibek-com-np/image/upload/v1423914278/Screen-Shot-2014-03-15-at-12.37.43-PM_fp3ydi.png?resize=482%2C517"></p>
+          <p>Since past few weeks I had been watching videos on extending <a href="http://earth.google.com/&quot; target=&quot;_blank">GoogleEarth</a> and KML at <a href="http://www.youtube.com/user/GoogleDeveloperDay">Google Developer Youtube Channel</a>. This weekend I finally manage to practice with <a href="http://www.qgis.org/">QuatumGIS</a> and <a href="http://www.mapwindow.org/">MapWindow GIS</a>. </p>
+<p>I practised with data downloaded from <a href="http://icimod.org&quot; target=&quot;_blank">ICIMOD</a>, Nepal. And here is a KML file of districts of Nepal. The file basically overlays on top GoogleEarth and GoogleMap and it has very basic attributes as described in the schema below.</p>
+<p><a href="https://docs.google.com/uc?id=0B8IiFn2ckr59OWUzZTRmZDItMTA1OS00OGE3LWE1ODMtMzc0ZWZjOWUxOGQ5&amp;export=download&amp;hl=en_GB">Download KML (2.2MB)</a></p>
+<p>Schema of above KML</p>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Schema</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;np_data&quot;</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;np_data&quot;</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">SimpleField</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;&lt;/</span><span class="n">SimpleField</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">SimpleField</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Description&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;&lt;/</span><span class="n">SimpleField</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">SimpleField</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;DISTRICT&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;&lt;/</span><span class="n">SimpleField</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">SimpleField</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;AREA_SQ&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="o">&gt;&lt;/</span><span class="n">SimpleField</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">SimpleField</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;AREA&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="o">&gt;&lt;/</span><span class="n">SimpleField</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">SimpleField</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PERIMETER&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="o">&gt;&lt;/</span><span class="n">SimpleField</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">SimpleField</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;DIST2_DD_&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="o">&gt;&lt;/</span><span class="n">SimpleField</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">SimpleField</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;DIST2_DD_I&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="o">&gt;&lt;/</span><span class="n">SimpleField</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">Schema</span><span class="o">&gt;</span>
+</pre></div>
         </div>
         <footer class="post-footer">
           <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
@@ -148,8 +157,8 @@
 
               <p class="post-info">
                 <b class="post-info-title">Published on</b>
-                <time datetime="2010-12-12T21:25:38+02:00" class="post-date">
-                  Sun 12 December 2010
+                <time datetime="2010-07-10T21:25:38+03:00" class="post-date">
+                  Sat 10 July 2010
                 </time>
               </p>
 
