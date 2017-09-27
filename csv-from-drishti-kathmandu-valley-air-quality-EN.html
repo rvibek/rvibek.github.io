@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>CSV from Drishti KTM Valley Air Quality</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <meta name="twitter:card" content="summary">
+
+    <meta property="og:type" content="article">
+
+
+    <link href="./" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="./theme/css/main.css" />
+    <link rel="stylesheet" href="./theme/css/pygment.css" />
+    <link rel="stylesheet" href="./theme/css/custom.css" />
+
+
+    <script src="./theme/js/jquery.min.js"></script>
+    <script src="./theme/js/modernizr.js"></script>
+
+    <script src="./theme/js/imageLoader.js"></script>
+    <script src="./theme/js/drawer.js"></script>
+    <script src="./theme/js/scripts.js"></script>
+
+
+
+  </head>
+  <body class="">
+
+
+    <button class="drawer-button" id="drawer-button" data-action="open-drawer"><i class="fa fa-bars"></i></button>
+    <div class="drawer-overlay"></div>
+    <nav class="drawer" tabindex="-1">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul class="drawer-list" role="navigation">
+
+          <li class="drawer-list-item">
+            <a data-pjax="" href="./">
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+
+
+          <li class="drawer-list-divider"></li>
+
+            <li class="drawer-list-item drawer-list-title">Pages</li>
+            <li class="drawer-list-divider"></li>
+
+
+          <li class="drawer-list-item drawer-list-title">Follow</li>
+            <li class="drawer-list-item">
+              <a data-pjax="" href="http://facebook.com/rvibek">
+                <i class="fa fa-facebook"></i> Facebook
+              </a>
+            </li>
+            <li class="drawer-list-item">
+              <a data-pjax="" href="http://instagram.com/rvibek">
+                <i class="fa fa-instagram"></i> Instagram
+              </a>
+            </li>
+
+
+          </ul>
+        </div>
+      </nav>
+
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+
+
+
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post ">
+      <section class="post-container">
+        <header class="post-header">
+<ul class="post-meta-list">
+  <li class="post-meta-item">
+    <time datetime="2016-08-18T21:25:38+02:00" itemprop="datePublished">
+      Thu 18 August 2016
+    </time>
+  </li>
+  <li class="post-meta-item">
+      <span itemprop="keywords"><a href="./tag/kathmandu.html">kathmandu</a></span>
+      <span itemprop="keywords"><a href="./tag/dataviz.html">dataviz</a></span>
+      <span itemprop="keywords"><a href="./tag/python.html">python</a></span>
+      <span itemprop="keywords"><a href="./tag/bokeh.html">bokeh</a></span>
+      <span itemprop="keywords"><a href="./tag/air-quality.html">air quality</a></span>
+  </li>
+
+
+</ul>            <h1 itemprop="name headline" class="post-title"><a href="./csv-from-drishti-kathmandu-valley-air-quality-EN.html" itemprop="url" data-pjax title="CSV from Drishti KTM Valley Air Quality">CSV from Drishti KTM Valley Air Quality</a></h1>
+          <!--h2 itemprop="about" class="post-subtitle"></h2-->
+        </header>
+        <aside class="post-side">
+          <div class="post-author">
+            <div class="post-author-info">
+              <a href="./author/vibek-raj-maurya.html" class="post-author-name">
+                Vibek Raj Maurya
+              </a>
+              <p class="post-author-bio"></p>
+            </div>
+          </div>
+        </aside>
+        <div itemprop="articleBody" class="post-body">
+          <p>I ran across a couple posts on <a href="https://www.facebook.com/groups/drishtiKathmandu/" title=" target=&quot;_blank">Drishti Kathmandu</a> recently. I was excited to read, as some tweets indicated, Drishti Kathmandu had installed low-cost pollution monitoring stations in various spots in the valley and would be sharing real time air quality monitoring data. </p>
+<p>Drishti Kathmandu maintains a <a href="https://docs.google.com/spreadsheets/d/1J2I40hglES63YZHROcOL3oAjDPqiiKLRPE_ikAWsR-Q/pubhtml?gid=1267634591&amp;single=true" title=" target=&quot;_blank">Google Sheets</a>. The sheet gets updated every hour but the readings doesn't change much though. Besides, I was disappointed the sheets provided just a snapshot of past 24 hours data. I wish they had shared more data or perhaps API - reachers and data enthusiasts would have loved it. I once wrote to group admin but never heard back.</p>
+<p>As a weekend project, I wrote a python script to scrap the sheets and append reading to <a href="http://goo.gl/y2Z0gG" title=" target=&quot;_blank">CSV file</a>. </p>
+<p>Primarily, I have used <a href="http://www.clips.ua.ac.be/pattern" title=" target=&quot;_blank">CLiPs pattern module</a> for screen scrapping. Regular expression <a href="https://docs.python.org/2/library/re.html" title=" target=&quot;_blank">re</a> module to clean up HTML.</p>
+<p>The <a href="http://goo.gl/y2Z0gG" title=" target=&quot;_blank">CSV file</a> looks as follows</p>
+<div class="highlight"><pre><span></span><span class="nx">date</span><span class="p">,</span><span class="nx">time</span><span class="p">,</span><span class="nx">place</span><span class="p">,</span><span class="nx">reading</span><span class="p">,</span><span class="nx">type</span>
+<span class="s2">&quot;Sunday,July 31,2016&quot;</span><span class="p">,</span><span class="s2">&quot;08:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;GONGABU&quot;</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="nx">R</span>
+<span class="s2">&quot;Sunday,July 31,2016&quot;</span><span class="p">,</span><span class="s2">&quot;11:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;KALANKI&quot;</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="nx">R</span>
+<span class="s2">&quot;Sunday,July 31,2016&quot;</span><span class="p">,</span><span class="s2">&quot;10:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;KOTESHWOR&quot;</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="nx">R</span>
+<span class="s2">&quot;Sunday,July 31,2016&quot;</span><span class="p">,</span><span class="s2">&quot;06:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;NEW BANESHWOR&quot;</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="nx">R</span>
+<span class="s2">&quot;Sunday,July 31,2016&quot;</span><span class="p">,</span><span class="s2">&quot;11:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;PUTALISADAK&quot;</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="nx">R</span>
+<span class="s2">&quot;Sunday,July 31,2016&quot;</span><span class="p">,</span><span class="s2">&quot;11:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;KALANKI&quot;</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="nx">R</span>
+<span class="p">...</span>
+<span class="p">...</span>
+<span class="s2">&quot;Thursday,August 18,2016&quot;</span><span class="p">,</span><span class="s2">&quot;10:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;GONGABU&quot;</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="nx">H</span>
+<span class="s2">&quot;Thursday,August 18,2016&quot;</span><span class="p">,</span><span class="s2">&quot;10:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;KALANKI&quot;</span><span class="p">,</span><span class="mi">63</span><span class="p">,</span><span class="nx">H</span>
+<span class="s2">&quot;Thursday,August 18,2016&quot;</span><span class="p">,</span><span class="s2">&quot;09:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;KOTESHWOR&quot;</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="nx">H</span>
+<span class="s2">&quot;Wednesday,August 17,2016&quot;</span><span class="p">,</span><span class="s2">&quot;09:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;MAHARAJGUNJ&quot;</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="nx">H</span>
+<span class="s2">&quot;Wednesday,August 17,2016&quot;</span><span class="p">,</span><span class="s2">&quot;00:00 PM&quot;</span><span class="p">,</span><span class="s2">&quot;PUTALISADAK&quot;</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="nx">H</span>
+<span class="s2">&quot;Wednesday,August 17,2016&quot;</span><span class="p">,</span><span class="s2">&quot;07:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;SAATDOBATO&quot;</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="nx">H</span>
+<span class="s2">&quot;Wednesday,August 17,2016&quot;</span><span class="p">,</span><span class="s2">&quot;08:00 PM&quot;</span><span class="p">,</span><span class="s2">&quot;THAPATHALI&quot;</span><span class="p">,</span><span class="mi">95</span><span class="p">,</span><span class="nx">H</span>
+</pre></div>
+
+
+<p>The flag R and H means Hourly reading and the Highest in the past 24 hours. I started appending Highest reading a week ago.</p>
+<p>Graph generated from the data collected in about a month</p>
+<p><img alt="Graph" src="http://res.cloudinary.com/rvibek-com-np/image/upload/v1472802171/drishti-aug_ooogyl.png"></p>
+<p><strong>Related tweets</strong>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Exceptionally good <a href="https://twitter.com/hashtag/air?src=hash">#air</a> today <a href="https://twitter.com/hashtag/airpollution?src=hash">#airpollution</a> <a href="https://twitter.com/hashtag/drishtikathmandu?src=hash">#drishtikathmandu</a> <a href="https://twitter.com/hashtag/kathmandu?src=hash">#kathmandu</a><br>realtime data @ <a href="https://t.co/4TaS5UKf2J">https://t.co/4TaS5UKf2J</a> <a href="https://t.co/kIa6Kc2Uxp">pic.twitter.com/kIa6Kc2Uxp</a></p>&mdash; Vogmask Nepal (@vogmask_nepal) <a href="https://twitter.com/vogmask_nepal/status/749807273350868994">July 4, 2016</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Glad to see KTM&#39;s <a href="https://twitter.com/hashtag/AirQuality?src=hash">#AirQuality</a> data (updated every 5 mins from 9 spots). Hope it&#39;s used for action <a href="https://twitter.com/hashtag/DrishtiKathmandu?src=hash">#DrishtiKathmandu</a> <a href="https://t.co/yNaLxaWli2">https://t.co/yNaLxaWli2</a></p>&mdash; Bhushan Tuladhar (@BhushanTuladhar) <a href="https://twitter.com/BhushanTuladhar/status/749484719981506561">July 3, 2016</a></blockquote>
+
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+        </div>
+        <footer class="post-footer">
+          <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+            <div class="post-author-info">
+              <h4 class="post-footer-heading">Written By</h4>
+
+              <a href="./author/vibek-raj-maurya.html" itemprop="url" class="post-author-name">
+                <span itemprop="name">Vibek Raj Maurya</span>
+              </a>
+
+              <p itemprop="description" class="post-author-bio"></p>
+
+
+                <p class="post-info">
+                  <b class="post-info-title">Published in</b>
+                  <a href="./category/blog.html">
+                    Blog
+                  </a>
+                </p>
+
+              <p class="post-info">
+                <b class="post-info-title">Published on</b>
+                <time datetime="2016-08-18T21:25:38+02:00" class="post-date">
+                  Thu 18 August 2016
+                </time>
+              </p>
+
+            </div>
+          </div>
+          <div class="post-social">
+            <h4 class="post-footer-heading">Spread the word</h4>
+            <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+            <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+            <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+          </div>
+        </footer>
+      </section>
+
+
+    </article>
+
+<footer class="footer" role="contentinfo">
+  <small>
+    <p>
+      rvibek |  |
+        Vibek Raj Maurya
+    </p>
+    <p>
+      <a href="https://github.com/qmcs/pelicanium">Pelicanium</a>, a theme based on
+      <a href="http://ghostium.oswaldoacauan.com/">Ghostium Theme</a>.
+      Proudly powered by  <a href="http://getpelican.com/">Pelican</a>.
+    </p>
+  </small>
+</footer>
+  </div>
+</section>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./theme/js//56c2364f.foot-scripts.min.js"></script>
+
+
+  </body>
+</html>
