@@ -120,6 +120,7 @@
       <span itemprop="keywords"><a href="./tag/kathmandu.html">kathmandu</a></span>
       <span itemprop="keywords"><a href="./tag/nepal.html">nepal</a></span>
       <span itemprop="keywords"><a href="./tag/drishti.html">drishti</a></span>
+      <span itemprop="keywords"><a href="./tag/air-quality.html">air quality</a></span>
   </li>
 
     <li class="post-meta-item">
@@ -140,37 +141,22 @@
           </div>
         </aside>
         <div itemprop="articleBody" class="post-body">
-          <p>I still haven't got over xkcd styled matplotlib graphs. This time, I am trying out subplot function to generate multiple graphs of <a href="https://github.com/rvibek/drishti" target="_blank">Kathmandu air pollution data</a>.</p>
+          <p>The plt.xkcd() function can convert any matplotlib plot into XKCD style. Trying it with Kathmandu air quality data collected over a year.</p>
+<p><a href="https://github.com/rvibek/drishti" target="_blank">Kathmandu air quality data</a>. </p>
 <p><a href="http://res.cloudinary.com/rvibek-com-np/image/upload/v1510869625/Figure_1_cxyjro.png" target="_blank"><img alt="Kathmandu PM 2.5" src="http://res.cloudinary.com/rvibek-com-np/image/upload/v1510869625/Figure_1_cxyjro.png"></a></p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
+<p><strong>Import library</strong></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
 
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xkcd</span><span class="p">()</span>
 
 <span class="n">font</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;family&#39;</span><span class="p">:</span> <span class="s1">&#39;xkcd&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span> <span class="p">:</span> <span class="s1">&#39;regular&#39;</span><span class="p">,</span><span class="s1">&#39;size&#39;</span>   <span class="p">:</span> <span class="mi">12</span><span class="p">}</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">font</span><span class="p">)</span>
-
-<span class="c1">#read data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;drishti.csv&quot;</span><span class="p">)</span>
-
-<span class="c1">#cleanup places</span>
-<span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;NEW BANESWOR&#39;</span><span class="p">,</span> <span class="s1">&#39;SAATDOBATO&#39;</span><span class="p">,</span> <span class="s1">&#39;The British School&#39;</span><span class="p">,</span> <span class="s1">&#39;THE BRITISH SCHOOL&#39;</span><span class="p">,</span> <span class="s1">&#39;BUDDHANILAKANTHA&#39;</span><span class="p">,</span> <span class="s1">&#39;KALANKI-LAB&#39;</span><span class="p">],</span>
-           <span class="p">[</span><span class="s1">&#39;NEW BANESHWOR&#39;</span><span class="p">,</span>  <span class="s1">&#39;SATDOBATO&#39;</span><span class="p">,</span> <span class="s1">&#39;BRITISH SCHOOL&#39;</span><span class="p">,</span> <span class="s1">&#39;BRITISH SCHOOL&#39;</span><span class="p">,</span> <span class="s1">&#39;BUDANILKANTHA&#39;</span><span class="p">,</span> <span class="s1">&#39;KALANKI-LAB1&#39;</span><span class="p">],</span>
-           <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s1">&#39;%A,%B </span><span class="si">%d</span><span class="s1">,%Y&#39;</span><span class="p">)</span>
-
-<span class="c1">#remove anamolies</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">reading</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">place</span><span class="o">==</span><span class="s1">&#39;KALANKI-LAB1&#39;</span><span class="p">)</span> <span class="o">|</span>
-                <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">place</span><span class="o">==</span><span class="s1">&#39;KALANKI-LAB2&#39;</span><span class="p">)</span> <span class="o">|</span>
-                <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">place</span><span class="o">==</span><span class="s1">&#39;GWARKO-BAFAL&#39;</span><span class="p">)</span> <span class="o">|</span>
-                <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">place</span><span class="o">==</span><span class="s1">&#39;JHAMSIKHEL&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
 
 
-<span class="n">places</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SATDOBATO&#39;</span><span class="p">,</span> <span class="s1">&#39;THAPATHALI&#39;</span><span class="p">,</span> <span class="s1">&#39;KALANKI&#39;</span><span class="p">,</span> <span class="s1">&#39;PUTALISADAK&#39;</span><span class="p">]</span>
+<p><strong>Plot graphs</strong></p>
+<div class="highlight"><pre><span></span><span class="n">places</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SATDOBATO&#39;</span><span class="p">,</span> <span class="s1">&#39;THAPATHALI&#39;</span><span class="p">,</span> <span class="s1">&#39;KALANKI&#39;</span><span class="p">,</span> <span class="s1">&#39;PUTALISADAK&#39;</span><span class="p">]</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 
@@ -195,7 +181,7 @@
 </pre></div>
 
 
-<p>Check out <a href="https://matplotlib.org/xkcd/examples/showcase/xkcd.html&quot;" target="_blank">matplotlib xkcd gallery</a> for more</p>
+<p>Check out <a href="https://matplotlib.org/xkcd/examples/showcase/xkcd.html" target="_blank">matplotlib xkcd gallery</a> for more</p>
         </div>
         <footer class="post-footer">
           <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
