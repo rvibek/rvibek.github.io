@@ -142,7 +142,7 @@
         </aside>
         <div itemprop="articleBody" class="post-body">
           <p>The plt.xkcd() function can convert any matplotlib plot into XKCD style. Trying it with <a href="https://github.com/rvibek/drishti" target="_blank">Kathmandu air quality data</a> collected over a year.</p>
-<p><a href="http://res.cloudinary.com/rvibek-com-np/image/upload/v1510869625/Figure_1_cxyjro.png" target="_blank"><img alt="Kathmandu PM 2.5" src="http://res.cloudinary.com/rvibek-com-np/image/upload/v1510869625/Figure_1_cxyjro.png"></a></p>
+<p><a href="http://res.cloudinary.com/rvibek-com-np/image/upload/v1510877205/ktm_air_quality_pm25_gukcmg.png" target="_blank"><img alt="Kathmandu PM 2.5" src="http://res.cloudinary.com/rvibek-com-np/image/upload/v1510877205/ktm_air_quality_pm25_gukcmg.png"></a></p>
 <p><strong>Import library</strong></p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
 
@@ -167,12 +167,12 @@
 
     <span class="n">tmpweekly</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tmpweekly</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">tmpweekly</span><span class="o">.</span><span class="n">reading</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Weekly PM2.5 AVG&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
 
     <span class="n">tmpmonthly</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tmpmonthly</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">tmpmonthly</span><span class="o">.</span><span class="n">reading</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Monthly PM2.5 AVG&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">places</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;  PM2.5 READING&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
 
