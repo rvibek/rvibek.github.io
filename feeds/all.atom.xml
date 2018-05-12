@@ -1,5 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>rvibek</title><link href="https://rvibek.com.np/" rel="alternate"></link><link href="https://rvibek.com.np/feeds/all.atom.xml" rel="self"></link><id>https://rvibek.com.np/</id><updated>2017-10-04T16:09:40+02:00</updated><entry><title>Basemap and xkcd() in Matplotlib</title><link href="https://rvibek.com.np/basemap-and-xkcd-in-matplotlib-EN.html" rel="alternate"></link><published>2017-09-15T21:25:38+02:00</published><updated>2017-09-29T20:25:59+02:00</updated><author><name>Vibek Raj Maurya</name></author><id>tag:rvibek.com.np,2017-09-15:/basemap-and-xkcd-in-matplotlib-EN.html</id><summary type="html">&lt;p&gt;I had never paid much attention what goes under the hood and barely used customisations. It was time to roll up the sleeves for yet another tutorial.&lt;/p&gt;</summary><content type="html">&lt;p&gt;It had been awhile since I last posted.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>rvibek</title><link href="https://rvibek.com.np/" rel="alternate"></link><link href="https://rvibek.com.np/feeds/all.atom.xml" rel="self"></link><id>https://rvibek.com.np/</id><updated>2018-02-12T09:00:00+02:00</updated><entry><title>Extracting Data from Google Maps</title><link href="https://rvibek.com.np/extracting-data-from-google-maps-.html" rel="alternate"></link><published>2018-02-12T08:25:16+02:00</published><updated>2018-02-12T09:00:00+02:00</updated><author><name>Vibek Raj Maurya</name></author><id>tag:rvibek.com.np,2018-02-12:/extracting-data-from-google-maps-.html</id><summary type="html">&lt;p&gt;Using the parameter page_token to recursively fetch Google Maps API result.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Google Maps API displays 20 results in one page. By using a parameter &lt;code&gt;page_token&lt;/code&gt;, it is possible to get more than 20 results.  The API fetches maximum 60 results for a query. The query can be refined should we need more result - run the query on sub-division level instead of country.&lt;/p&gt;
+&lt;p&gt;The following code loads the first 20 results, if the JSON file has &lt;code&gt;"next_page_token"&lt;/code&gt; key then it recursively loads the subsequent pages.&lt;/p&gt;
+&lt;p&gt;The scripts available in my &lt;a href="https://github.com/rvibek/Data-from-Google-Maps"&gt;GitRepo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And here's are the saved results in Gist.&lt;a href="https://gist.github.com/rvibek/e5aea8a9396ad10d5b8d42562c53cf08"&gt;Nepalese Restaurants in Europe&lt;/a&gt;. Interestingly, there are almost 80 Nepalese restaurants in Finland. &lt;/p&gt;
+&lt;p&gt;The script uses 3 libraries. &lt;code&gt;time&lt;/code&gt; is needed to delay the API call. Google has limitation on request per second. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The next is declare the varible and load first JSON&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Declare API Key &amp;amp; Query
+key = &amp;#39;AIzaSyXXX-XXXX&amp;#39;
+query = &amp;#39;Nepalese+Restaurants+Finland&amp;#39;
+url = &amp;#39;https://maps.googleapis.com/maps/api/place/textsearch/json?query=&amp;#39; + str(query) + &amp;#39;&amp;amp;key=&amp;#39; + str(key)
+
+# Parse JSON
+jsonfile = requests.get(url)
+f = jsonfile.json()
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The below function recursively populates the result.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Recursive Function
+def getjson(url, pagetoken, key, query):
+
+    time.sleep(3)  # API has requests per second limitation
+
+    if pagetoken == &amp;#39;&amp;#39;:
+        print(&amp;#39;url&amp;#39;, url)
+        pass
+
+    else:
+
+        print(&amp;#39;e1url&amp;#39;, url)
+
+        # Reset URL
+        url = &amp;#39;https://maps.googleapis.com/maps/api/place/textsearch/json?query=&amp;#39; + str(query) + &amp;#39;&amp;amp;key=&amp;#39; + str(key)
+        url = url + &amp;#39;&amp;amp;pagetoken=&amp;#39; + pagetoken
+
+        jsonfile = requests.get(url)
+        f = jsonfile.json()
+
+        # append array with desired data from JSON
+        for count, name in enumerate(f[&amp;#39;results&amp;#39;]):
+            names.append((f[&amp;#39;results&amp;#39;][count][&amp;#39;name&amp;#39;]))
+            address.append(f[&amp;#39;results&amp;#39;][count][&amp;#39;formatted_address&amp;#39;])
+
+        # print(f) #DEBUG
+        # Assign NEW Page Token
+        try:
+            pagetoken = f[&amp;#39;next_page_token&amp;#39;]
+        except KeyError:
+            pagetoken = &amp;#39;&amp;#39;
+        pass
+
+        # Recursive call
+        getjson(url, pagetoken, key, query)
+&lt;/pre&gt;&lt;/div&gt;</content><category term="google maps"></category><category term="python"></category><category term="scrapping"></category></entry><entry><title>Basemap and xkcd() in Matplotlib</title><link href="https://rvibek.com.np/basemap-and-xkcd-in-matplotlib-EN.html" rel="alternate"></link><published>2017-09-15T21:25:38+02:00</published><updated>2017-09-29T20:25:59+02:00</updated><author><name>Vibek Raj Maurya</name></author><id>tag:rvibek.com.np,2017-09-15:/basemap-and-xkcd-in-matplotlib-EN.html</id><summary type="html">&lt;p&gt;I had never paid much attention what goes under the hood and barely used customisations. It was time to roll up the sleeves for yet another tutorial.&lt;/p&gt;</summary><content type="html">&lt;p&gt;It had been awhile since I last posted.&lt;/p&gt;
 &lt;p&gt;I have been following &lt;a href="https://www.youtube.com/user/sentdex" target="_blank"&gt;santdex's YouTube&lt;/a&gt; for tutorials. Although I had been using some &lt;a href="https://matplotlib.org" target="_blank"&gt;matplotlib&lt;/a&gt;, I had never paid much attention what goes under the hood and barely used customisations. It was time to roll up the sleeves for yet another tutorial. &lt;/p&gt;
 &lt;p&gt;I have been 'binge' watching &lt;a href="https://www.youtube.com/playlist?list=PLQVvvaa0QuDfefDfXb9Yf0la1fPDKluPF" target="_blank"&gt;Matplotlib Tutorial Series - Graphing in Python&lt;/a&gt;. And, here's one of the works - &lt;a href="https://xkcd.com" target="_blank"&gt;xkcd&lt;/a&gt; styled map of South Asia. &lt;/p&gt;
 &lt;p&gt;&lt;a href="http://res.cloudinary.com/rvibek-com-np/image/upload/v1505491453/xkcd_southasia_xkcd_ag53g2.png" target="_blank"&gt;&lt;img alt="xkcd South Asia" src="https://res.cloudinary.com/rvibek-com-np/image/upload/v1505491453/xkcd_southasia_xkcd_ag53g2.png"&gt;&lt;/a&gt;&lt;/p&gt;
