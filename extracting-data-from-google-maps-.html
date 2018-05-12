@@ -142,7 +142,7 @@
           <p>Google Maps API displays 20 results in one page. By using a parameter <code>page_token</code>, it is possible to get more than 20 results.  The API fetches maximum 60 results for a query. The query can be refined should we need more result - run the query on sub-division level instead of country.</p>
 <p>The following code loads the first 20 results, if the JSON file has <code>"next_page_token"</code> key then it recursively loads the subsequent pages.</p>
 <p>The scripts available in my <a href="https://github.com/rvibek/Data-from-Google-Maps">GitRepo</a></p>
-<p>And here's are the saved results in Gist.<a href="https://gist.github.com/rvibek/e5aea8a9396ad10d5b8d42562c53cf08">Nepalese Restaurants in Europe</a>. Interestingly, there are almost 80 Nepalese restaurants in Finland. </p>
+<p>And here's are the saved results in Gist. <a href="https://gist.github.com/rvibek/e5aea8a9396ad10d5b8d42562c53cf08">Nepalese Restaurants in Europe</a>. Interestingly, there are almost 80 Nepalese restaurants in Finland. </p>
 <p>The script uses 3 libraries. <code>time</code> is needed to delay the API call. Google has limitation on request per second. </p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">requests</span>
