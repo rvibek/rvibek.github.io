@@ -145,7 +145,7 @@
 <p>I am experimenting a multiple of intances of dockers in a vps using <a href="https://github.com/Arubacloud/docker-machine-driver-arubacloud">docker-machine aruba driver</a>. I have 2 docker instances running - <a href="https://hub.docker.com/r/jupyter/datascience-notebook/">jupyter/datascience-notebook</a> and <a href="https://hub.docker.com/_/nginx/">nginx</a></p>
 <p>Creating a new server is straight forward</p>
 <div class="highlight"><pre><span></span>docker-machine create --driver arubacloud \
- --ac_action &quot;NewSmart&quot;\
+ --ac_action                      &quot;NewSmart&quot;\
  --ac_username                    &quot;AWI-XXXX&quot; \
  --ac_password                    &quot;XXXXXX&quot; \
  --ac_endpoint                    &quot;dc1&quot; \
@@ -163,7 +163,8 @@ docker pull jupyter/datascience-notebook
 
 
 <p>Datascience-notebook setups with the default user <code>jovyan</code>, which is not sudoer.  My attempt to find <code>sudo</code> password was invain. However, I could start the docker as a root from the host. It allows me to install/update software. </p>
-<p><code>docker run --name jupyter-dockr  -p 8888:8888 -p 2223:22 -e GRANT_SUDO=yes --user root -d  jupyter/datascience-notebook</code></p>
+<div class="highlight"><pre><span></span>docker run --name jupyter-dockr  -p 8888:8888 -p 2223:22 -e GRANT_SUDO=yes --user root -d  jupyter/datascience-notebook 
+</pre></div>
         </div>
         <footer class="post-footer">
           <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
