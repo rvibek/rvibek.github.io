@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>rvibek</title><link href="https://rvibek.com.np/" rel="alternate"></link><link href="https://rvibek.com.np/feeds/all.atom.xml" rel="self"></link><id>https://rvibek.com.np/</id><updated>2018-07-20T22:45:14+02:00</updated><entry><title>Setting up Docker in ArubaCloud</title><link href="https://rvibek.com.np/setting-up-docker-in-arubacloud-.html" rel="alternate"></link><published>2018-07-20T08:25:16+02:00</published><updated>2018-07-20T22:45:14+02:00</updated><author><name>Vibek Raj Maurya</name></author><id>tag:rvibek.com.np,2018-07-20:/setting-up-docker-in-arubacloud-.html</id><summary type="html">&lt;p&gt;I am experimenting a multiple of intances of dockers in a vps using docker-machine aruba driver&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been using  &lt;a href="https://www.arubacloud.com"&gt;arubacloud&lt;/a&gt; VPS for sometime now. Price wise, it's cheap and the service is good. Their price is as low as 1 Euro/month with 1 vCPU, 1 GB RAM, 20 GB SSD Storage and 2 TB/month data transfer.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>rvibek</title><link href="https://rvibek.com.np/" rel="alternate"></link><link href="https://rvibek.com.np/feeds/all.atom.xml" rel="self"></link><id>https://rvibek.com.np/</id><updated>2018-07-20T22:45:14+02:00</updated><entry><title>Setting up Docker in ArubaCloud</title><link href="https://rvibek.com.np/setting-up-docker-in-arubacloud-.html" rel="alternate"></link><published>2018-07-20T08:25:16+02:00</published><updated>2018-07-20T22:45:14+02:00</updated><author><name>Vibek Raj Maurya</name></author><id>tag:rvibek.com.np,2018-07-20:/setting-up-docker-in-arubacloud-.html</id><summary type="html">&lt;p&gt;I am experimenting a multiple of intances of dockers in a arubacloud vps using docker-machine aruba driver&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been using  &lt;a href="https://www.arubacloud.com"&gt;arubacloud&lt;/a&gt; VPS for sometime now. Price wise, it's cheap and the service is good. Their price is as low as 1 Euro/month with 1 vCPU, 1 GB RAM, 20 GB SSD Storage and 2 TB/month data transfer.&lt;/p&gt;
 &lt;p&gt;I am experimenting a multiple of intances of dockers in a vps using &lt;a href="https://github.com/Arubacloud/docker-machine-driver-arubacloud"&gt;docker-machine aruba driver&lt;/a&gt;. I have 2 docker instances running - &lt;a href="https://hub.docker.com/r/jupyter/datascience-notebook/"&gt;jupyter/datascience-notebook&lt;/a&gt; and &lt;a href="https://hub.docker.com/_/nginx/"&gt;nginx&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Creating a new server is straight forward&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-machine create --driver arubacloud \
@@ -13,14 +13,19 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;then &lt;code&gt;docker-machine ssh arubadocker&lt;/code&gt; to SSH the vps&lt;/p&gt;
+&lt;p&gt;then &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-machine ssh arubadocker
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;to SSH the vps&lt;/p&gt;
 &lt;p&gt;and, to create instances of dockers&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker pull nginx
 docker pull jupyter/datascience-notebook
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Datascience-notebook setups with the default user &lt;code&gt;jovyan&lt;/code&gt;, which is not sudoer.  My attempt to find &lt;code&gt;sudo&lt;/code&gt; password was invain. However, I could start the docker as a root from the host. It allows me to install/update software. &lt;/p&gt;
+&lt;p&gt;Datascience-notebook setups with the default user &lt;code&gt;jovyan&lt;/code&gt;, which is not a sudoer.  My attempt to find &lt;code&gt;sudo&lt;/code&gt; password in the internet was in vain. However, I could start the docker as a root from the host. It allows me to install/update software. &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker run --name jupyter-dockr  -p 8888:8888 -p 2223:22 -e GRANT_SUDO=yes --user root -d  jupyter/datascience-notebook 
 &lt;/pre&gt;&lt;/div&gt;</content><category term="docker"></category><category term="aruba"></category><category term="python"></category><category term="nginx"></category><category term="jupyter"></category></entry><entry><title>Extracting Data from Google Maps</title><link href="https://rvibek.com.np/extracting-data-from-google-maps-.html" rel="alternate"></link><published>2018-02-12T08:25:16+02:00</published><updated>2018-02-12T09:00:00+02:00</updated><author><name>Vibek Raj Maurya</name></author><id>tag:rvibek.com.np,2018-02-12:/extracting-data-from-google-maps-.html</id><summary type="html">&lt;p&gt;Using the parameter page_token to recursively fetch Google Maps API result.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Google Maps API displays 20 results in one page. By using a parameter &lt;code&gt;page_token&lt;/code&gt;, it is possible to get more than 20 results.  The API fetches maximum 60 results for a query. The query can be refined should we need more result - run the query on sub-division level instead of country.&lt;/p&gt;
 &lt;p&gt;The following code loads the first 20 results, if the JSON file has &lt;code&gt;"next_page_token"&lt;/code&gt; key then it recursively loads the subsequent pages.&lt;/p&gt;

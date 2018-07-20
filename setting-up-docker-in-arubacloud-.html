@@ -155,14 +155,19 @@
 </pre></div>
 
 
-<p>then <code>docker-machine ssh arubadocker</code> to SSH the vps</p>
+<p>then </p>
+<div class="highlight"><pre><span></span>docker-machine ssh arubadocker
+</pre></div>
+
+
+<p>to SSH the vps</p>
 <p>and, to create instances of dockers</p>
 <div class="highlight"><pre><span></span>docker pull nginx
 docker pull jupyter/datascience-notebook
 </pre></div>
 
 
-<p>Datascience-notebook setups with the default user <code>jovyan</code>, which is not sudoer.  My attempt to find <code>sudo</code> password was invain. However, I could start the docker as a root from the host. It allows me to install/update software. </p>
+<p>Datascience-notebook setups with the default user <code>jovyan</code>, which is not a sudoer.  My attempt to find <code>sudo</code> password in the internet was in vain. However, I could start the docker as a root from the host. It allows me to install/update software. </p>
 <div class="highlight"><pre><span></span>docker run --name jupyter-dockr  -p 8888:8888 -p 2223:22 -e GRANT_SUDO=yes --user root -d  jupyter/datascience-notebook 
 </pre></div>
         </div>
