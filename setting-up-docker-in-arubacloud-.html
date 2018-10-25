@@ -120,6 +120,7 @@
       <span itemprop="keywords"><a href="./tag/python.html">python</a></span>
       <span itemprop="keywords"><a href="./tag/nginx.html">nginx</a></span>
       <span itemprop="keywords"><a href="./tag/jupyter.html">jupyter</a></span>
+      <span itemprop="keywords"><a href="./tag/data-science.html">data science</a></span>
   </li>
 
     <li class="post-meta-item">
@@ -141,33 +142,22 @@
           </div>
         </aside>
         <div itemprop="articleBody" class="post-body">
-          <p>I have been using  <a href="https://www.arubacloud.com">arubacloud</a> VPS for sometime now. Price wise, it's cheap and the service is good. Their price is as low as 1 Euro/month with 1 vCPU, 1 GB RAM, 20 GB SSD Storage and 2 TB/month data transfer.</p>
-<p>I am experimenting a multiple of intances of dockers in a vps using <a href="https://github.com/Arubacloud/docker-machine-driver-arubacloud">docker-machine aruba driver</a>. I have 2 docker instances running - <a href="https://hub.docker.com/r/jupyter/datascience-notebook/">jupyter/datascience-notebook</a> and <a href="https://hub.docker.com/_/nginx/">nginx</a></p>
-<p>Creating a new server is straight forward</p>
-<div class="highlight"><pre><span></span>docker-machine create --driver arubacloud \
- --ac_action                      &quot;NewSmart&quot;\
- --ac_username                    &quot;AWI-XXXX&quot; \
- --ac_password                    &quot;XXXXXX&quot; \
- --ac_endpoint                    &quot;dc1&quot; \
- --ac_template                    &quot;ubuntu1604_x64_1_0&quot; \
- --ac_size                        &quot;Large&quot; \
- --ac_admin_password              &quot;XXXXXX&quot; arubdocker
-</pre></div>
-
-
+          <p>I have been using  <a href="https://www.arubacloud.com">arubacloud</a> VPS for some time now. Price wise, it's cheap and can't complain about the serive. The subscription is as low as 1 EUR/month for 1 vCPU, 1 GB RAM, 20 GB SSD Storage and 2 TB/month data transfer.</p>
+<p>This is an experiment to setup a multiple of instance of dockers in a VPS using <a href="https://github.com/Arubacloud/docker-machine-driver-arubacloud">docker-machine aruba driver</a>. I have 2 docker instances running - <a href="https://hub.docker.com/r/jupyter/datascience-notebook/">jupyter/datascience-notebook</a> and <a href="https://hub.docker.com/_/nginx/">nginx</a></p>
+<p>Creating a new server is straightforward</p>
 <p>then </p>
 <div class="highlight"><pre><span></span>docker-machine ssh arubadocker
 </pre></div>
 
 
-<p>to SSH the vps</p>
+<p>to SSH the VPS</p>
 <p>and, to create instances of dockers</p>
 <div class="highlight"><pre><span></span>docker pull nginx
 docker pull jupyter/datascience-notebook
 </pre></div>
 
 
-<p>Datascience-notebook setups with the default user <code>jovyan</code>, which is not a sudoer.  My attempt to find <code>sudo</code> password in the internet was in vain. However, I could start the docker as a root from the host. It allows me to install/update software. </p>
+<p>Data science-notebook setups with the default user <code>jovyan</code>, which is not a sudoer.  My attempt to find <code>sudo</code> password in the internet was in vain. However, I could start the docker as a root from the host. It allows me to install/update software. </p>
 <div class="highlight"><pre><span></span>docker run --name jupyter-dockr  -p 8888:8888 -p 2223:22 -e GRANT_SUDO=yes --user root -d  jupyter/datascience-notebook 
 </pre></div>
         </div>

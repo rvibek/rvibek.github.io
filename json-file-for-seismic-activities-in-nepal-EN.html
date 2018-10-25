@@ -142,8 +142,8 @@
         </aside>
         <div itemprop="articleBody" class="post-body">
           <p>Spent the long weekend fiddling with <a href="http://cran.r-project.org/&quot; target&quot;=_blank">R</a> and <a href="http://python.org&quot; target&quot;=_blank">Python</a> mainly to pull the data - and then cleaning and reorganising.</p>
-<p>Among others, I wrote a python script to reorganise the table containing seismological record from <a href="http://seismonepal.gov.np" title=" target=&quot;_blank">seismonepal.gov.np</a> website.</p>
-<p>I have used <strong>=ImportHTML()</strong> to fetch the data from above table. I could have written scrapper but whenever data is in tabular form I rely on <a href="http://spreadsheet.google.com" title=" target=&quot;_blank">Google Spreadsheet</a> to convert table into CSV. </p>
+<p>Among others, I wrote a python script to reorganise the table containing seismological record from <a href="http://seismonepal.gov.np" title="target=&quot;_blank">seismonepal.gov.np</a> website.</p>
+<p>I have used <strong>=ImportHTML()</strong> to fetch the data from above table. I could have written scrapper but whenever data is in tabular form I rely on <a href="http://spreadsheet.google.com" title="target=&quot;_blank">Google Spreadsheet</a> to convert table into CSV. </p>
 <div class="highlight"><pre><span></span><span class="o">=</span><span class="n">ImportHTML</span><span class="p">(</span><span class="s2">&quot;http://seismonepal.gov.np/index.php&quot;</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
@@ -179,7 +179,7 @@
 </pre></div>
 
 
-<p>And writing the result into <a href="http://app-weather.rhcloud.com/data/earthquake/earthquake.json" title=" target=&quot;_blank">JSON</a> format with Nepali data. </p>
+<p>And writing the result into <a href="http://app-weather.rhcloud.com/data/earthquake/earthquake.json" title="target=&quot;_blank">JSON</a> format with Nepali data. </p>
 <div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;earthquake&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
@@ -221,7 +221,7 @@
 </pre></div>
 
 
-<p>Finally - widget based on above JSON file. <a href="http://himalkhabar.com" title=" target=&quot;_blank">HimalKhabar</a> has embedded it in its website.</p>
+<p>Finally - widget based on above JSON file. <a href="http://himalkhabar.com" title="target=&quot;_blank">HimalKhabar</a> has embedded it in its website.</p>
 <iframe src=http://app-weather.rhcloud.com/data/earthquake/ width="270" height="410" frameborder="0">Browser not compatible.</iframe>
 
 <blockquote class="twitter-tweet" lang="en"><p lang="ne" dir="ltr">भूकम्पको लाइभ अपडेट <a href="http://t.co/yfbJgjRYxA">http://t.co/yfbJgjRYxA</a> मा ।</p>&mdash; Himal Khabar (@Himal_Khabar) <a href="https://twitter.com/Himal_Khabar/status/600229390790721538">May 18, 2015</a></blockquote>

@@ -116,7 +116,7 @@
   </li>
   <li class="post-meta-item">
       <span itemprop="keywords"><a href="./tag/kathmandu.html">kathmandu</a></span>
-      <span itemprop="keywords"><a href="./tag/dataviz.html">dataviz</a></span>
+      <span itemprop="keywords"><a href="./tag/data-viz.html">data viz</a></span>
       <span itemprop="keywords"><a href="./tag/python.html">python</a></span>
       <span itemprop="keywords"><a href="./tag/bokeh.html">bokeh</a></span>
       <span itemprop="keywords"><a href="./tag/air-quality.html">air quality</a></span>
@@ -141,11 +141,11 @@
           </div>
         </aside>
         <div itemprop="articleBody" class="post-body">
-          <p>I ran across a couple posts on <a href="https://www.facebook.com/groups/drishtiKathmandu/" title=" target=&quot;_blank">Drishti Kathmandu</a> recently. I was excited to read, as some tweets indicated, Drishti Kathmandu had installed low-cost pollution monitoring stations in various spots in the valley and would be sharing real time air quality monitoring data. </p>
-<p>Drishti Kathmandu maintains a <a href="https://docs.google.com/spreadsheets/d/1J2I40hglES63YZHROcOL3oAjDPqiiKLRPE_ikAWsR-Q/pubhtml?gid=1267634591&amp;single=true" title=" target=&quot;_blank">Google Sheets</a>. The sheet gets updated every hour but the readings doesn't change much though. Besides, I was disappointed the sheets provided just a snapshot of past 24 hours data. I wish they had shared more data or perhaps API - reachers and data enthusiasts would have loved it. I once wrote to group admin but never heard back.</p>
-<p>As a weekend project, I wrote a python script to scrap the sheets and append reading to <a href="http://goo.gl/y2Z0gG" title=" target=&quot;_blank">CSV file</a>. </p>
-<p>Primarily, I have used <a href="http://www.clips.ua.ac.be/pattern" title=" target=&quot;_blank">CLiPs pattern module</a> for screen scrapping. Regular expression <a href="https://docs.python.org/2/library/re.html" title=" target=&quot;_blank">re</a> module to clean up HTML.</p>
-<p>The <a href="http://goo.gl/y2Z0gG" title=" target=&quot;_blank">CSV file</a> looks as follows</p>
+          <p>I ran across a couple posts on <a href="https://www.facebook.com/groups/drishtiKathmandu/" title="target=&quot;_blank">Drishti Kathmandu</a> recently. I was excited to read, as some tweets indicated, Drishti Kathmandu had installed low-cost pollution monitoring stations in various spots in the valley and would be sharing real-time air quality monitoring data. </p>
+<p>Drishti Kathmandu maintains a <a href="https://docs.google.com/spreadsheets/d/1J2I40hglES63YZHROcOL3oAjDPqiiKLRPE_ikAWsR-Q/pubhtml?gid=1267634591&amp;single=true" title="target=&quot;_blank">Google Sheets</a>. The sheet gets updated every hour but the readings don't change much though. Besides, I was disappointed the sheets provided just a snapshot of the past 24 hours data. I wish they had shared more data or perhaps API - researchers and data enthusiasts would have appreciated it. Once I even wrote to the group admin but never heard back.</p>
+<p>As a weekend project, I wrote a python script to scrap the sheets and append reading to <a href="http://goo.gl/y2Z0gG" title="target=&quot;_blank">CSV file</a>. </p>
+<p>Primarily, I have used <a href="http://www.clips.ua.ac.be/pattern" title="target=&quot;_blank">CLiPs pattern module</a> for screen scrapping. Regular expression <a href="https://docs.python.org/2/library/re.html" title="target=&quot;_blank">re</a> module to clean up HTML.</p>
+<p>The <a href="http://goo.gl/y2Z0gG" title="target=&quot;_blank">CSV file</a> looks as follows</p>
 <div class="highlight"><pre><span></span><span class="nx">date</span><span class="p">,</span><span class="nx">time</span><span class="p">,</span><span class="nx">place</span><span class="p">,</span><span class="nx">reading</span><span class="p">,</span><span class="nx">type</span>
 <span class="s2">&quot;Sunday,July 31,2016&quot;</span><span class="p">,</span><span class="s2">&quot;08:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;GONGABU&quot;</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="nx">R</span>
 <span class="s2">&quot;Sunday,July 31,2016&quot;</span><span class="p">,</span><span class="s2">&quot;11:00 AM&quot;</span><span class="p">,</span><span class="s2">&quot;KALANKI&quot;</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="nx">R</span>
@@ -165,7 +165,7 @@
 </pre></div>
 
 
-<p>The flag R and H means Hourly reading and the Highest in the past 24 hours. I started appending Highest reading a week ago.</p>
+<p>The flags R and H mean hourly reading and the highest in the past 24 hours respectively. </p>
 <p>Graph generated from the data collected in about a month</p>
 <p><img alt="Graph" src="https://res.cloudinary.com/rvibek-com-np/image/upload/v1472802171/drishti-aug_ooogyl.png"></p>
 <p><strong>Related tweets</strong>
