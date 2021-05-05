@@ -20,6 +20,7 @@
 
 
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!-- <link href="./" rel="shortcut icon" type="image/x-icon"> -->
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
@@ -38,7 +39,7 @@
     <script src="./theme/js/scripts.js"></script>
 
 
-        <link href="https://rvibek.com.np/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="rvibek Atom Feed" />
+        <link href="https://rvibek.co.np/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="rvibek Atom Feed" />
 
   </head>
   <body class="">
@@ -106,6 +107,7 @@
 <section class="wrapper wrapper-post">
   <div class="wrapper-container">
     <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post ">
+
       <section class="post-container">
         <header class="post-header">
 <ul class="post-meta-list">
@@ -136,7 +138,7 @@
         <aside class="post-side">
           <div class="post-author">
             <div class="post-author-info">
-              <img src="https://res.cloudinary.com/rvibek-com-np/image/upload/c_scale,w_100/v1525895320/vibek_raj_maurya_cir_dt99eo.png"/>
+              <img src="https://res.cloudinary.com/rvibek-com-np/image/upload/c_scale,w_100/v1618400153/circle-cropped_4_dgiful.png"/>
               <a href="./author/vibek-raj-maurya.html" class="post-author-name">
                 Vibek Raj Maurya
               </a>
@@ -149,7 +151,7 @@
 <p>I have setup <a href="https://www.kimonolabs.com/" title="target=&quot;_blank&quot;">Kimono</a> to scrap video list from <a href="http://www.canadanepal.net" title="target=&quot;_blank">CanadaNepal</a>. The following file in <a href="http://www.openshift" title="target=&quot;_blank">OpenShift</a> is updated every hour 
 <a href="http://app-weather.rhcloud.com/data/kimplx.plx" title="target=&quot;_blank">kimplx.plx</a> which is loaded in Navi-X. Search for <em>Nepali TV</em> in Navi-X to see the listings.</p>
 <p><strong>Python Code</strong></p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">urllib</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 
@@ -176,12 +178,11 @@
     <span class="n">x</span><span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
 
 <span class="n">myfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">x</span>
-</pre></div>
-
+<span class="nb">print</span> <span class="n">x</span>
+</code></pre></div>
 
 <p><strong>Generated PLX file</strong></p>
-<div class="highlight"><pre><span></span><span class="p">...</span>
+<div class="highlight"><pre><span></span><code><span class="p">...</span>
 <span class="nx">rating</span><span class="o">=-</span><span class="mf">1.00</span>
 
 <span class="nx">type</span><span class="o">=</span><span class="nx">video</span>
@@ -194,18 +195,16 @@
 <span class="nx">type</span><span class="o">=</span><span class="nx">video</span>
 <span class="nx">name</span><span class="o">=</span><span class="nx">Human</span> <span class="nx">Trafficking</span> <span class="nx">Till</span> <span class="nx">When</span><span class="o">?</span>
 <span class="p">...</span>
-</pre></div>
-
+</code></pre></div>
 
 <p><strong>Result in Navi-X</strong>
 <img alt="News brief" src="http://res.cloudinary.com/rvibek-com-np/image/upload/q_63/v1423918809/NepaliTV_Navi-X_z7y0t5.png"></p>
 <p><strong>Add Nepali Channel to your Favlist</strong>
 I have added a few Nepali TV channels (NTV, NTV Plus and Sagarmatha) and some Youtube channels to Navi-X repository. The TV channels stream live. I shall keep updating the repository as I get new feeds.</p>
-<div class="highlight"><pre><span></span>Search “nepal” in Navi-X.
+<div class="highlight"><pre><span></span><code><span class="k">Search</span> <span class="err">“</span><span class="n">nepal</span><span class="err">”</span> <span class="k">in</span> <span class="n">Navi</span><span class="o">-</span><span class="n">X</span><span class="p">.</span>
 
-Right click and save the result – “Nepali TV” to your favourite.
-</pre></div>
-
+<span class="k">Right</span> <span class="n">click</span> <span class="k">and</span> <span class="n">save</span> <span class="n">the</span> <span class="k">result</span> <span class="err">–</span> <span class="err">“</span><span class="n">Nepali</span> <span class="n">TV</span><span class="err">”</span> <span class="k">to</span> <span class="n">your</span> <span class="n">favourite</span><span class="p">.</span>
+</code></pre></div>
 
 <p><a href="http://rvibek.com/nepali-channels-in-xbmc/" title="target=&quot;_blank">Refer following page for more about Nepali Channels in XBMC/Kodi</a></p>
         </div>
@@ -241,27 +240,23 @@ Right click and save the result – “Nepali TV” to your favourite.
             <h4 class="post-footer-heading">Spread the word</h4>
             <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
             <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
-            <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            <!-- <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a> -->
           </div>
         </footer>
       </section>
 
-    <div class="comments">
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = "rvibekblog"; // required: replace example with your forum shortname
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+  <section class="post-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_identifier = "nepali-news-video-plx-EN.html";
+      var disqus_url = "./nepali-news-video-plx-EN.html";
+      (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://rvibekblog.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
 
     </article>
 
@@ -303,7 +298,7 @@ Right click and save the result – “Nepali TV” to your favourite.
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>

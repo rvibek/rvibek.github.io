@@ -20,6 +20,7 @@
 
 
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!-- <link href="./" rel="shortcut icon" type="image/x-icon"> -->
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
@@ -38,7 +39,7 @@
     <script src="./theme/js/scripts.js"></script>
 
 
-        <link href="https://rvibek.com.np/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="rvibek Atom Feed" />
+        <link href="https://rvibek.co.np/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="rvibek Atom Feed" />
 
   </head>
   <body class="">
@@ -106,6 +107,7 @@
 <section class="wrapper wrapper-post">
   <div class="wrapper-container">
     <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post ">
+
       <section class="post-container">
         <header class="post-header">
 <ul class="post-meta-list">
@@ -132,7 +134,7 @@
         <aside class="post-side">
           <div class="post-author">
             <div class="post-author-info">
-              <img src="https://res.cloudinary.com/rvibek-com-np/image/upload/c_scale,w_100/v1525895320/vibek_raj_maurya_cir_dt99eo.png"/>
+              <img src="https://res.cloudinary.com/rvibek-com-np/image/upload/c_scale,w_100/v1618400153/circle-cropped_4_dgiful.png"/>
               <a href="./author/vibek-raj-maurya.html" class="post-author-name">
                 Vibek Raj Maurya
               </a>
@@ -144,12 +146,11 @@
           <p>Spent the long weekend fiddling with <a href="http://cran.r-project.org/&quot; target&quot;=_blank">R</a> and <a href="http://python.org&quot; target&quot;=_blank">Python</a> mainly to pull the data - and then cleaning and reorganising.</p>
 <p>Among others, I wrote a python script to reorganise the table containing seismological record from <a href="http://seismonepal.gov.np" title="target=&quot;_blank">seismonepal.gov.np</a> website.</p>
 <p>I have used <strong>=ImportHTML()</strong> to fetch the data from above table. I could have written scrapper but whenever data is in tabular form I rely on <a href="http://spreadsheet.google.com" title="target=&quot;_blank">Google Spreadsheet</a> to convert table into CSV. </p>
-<div class="highlight"><pre><span></span><span class="o">=</span><span class="n">ImportHTML</span><span class="p">(</span><span class="s2">&quot;http://seismonepal.gov.np/index.php&quot;</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="o">=</span><span class="n">ImportHTML</span><span class="p">(</span><span class="s2">&quot;http://seismonepal.gov.np/index.php&quot;</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 
 <p>Next, a python script converts data in English into Nepal</p>
-<div class="highlight"><pre><span></span><span class="c1">#List of character/word to be replaced</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#List of character/word to be replaced</span>
 <span class="n">replaceDict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;1&#39;</span><span class="p">:</span><span class="s1">&#39;१&#39;</span> <span class="p">,</span>
     <span class="s1">&#39;2&#39;</span><span class="p">:</span><span class="s1">&#39;२&#39;</span> <span class="p">,</span>
@@ -176,11 +177,10 @@
         <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">earthquake</span><span class="o">.</span><span class="n">next</span><span class="p">()]</span>
         <span class="n">row</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
         <span class="n">row</span> <span class="o">=</span> <span class="n">replace_all</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">replaceDict</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>And writing the result into <a href="http://app-weather.rhcloud.com/data/earthquake/earthquake.json" title="target=&quot;_blank">JSON</a> format with Nepali data. </p>
-<div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="s2">&quot;earthquake&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">&quot;MM&quot;</span><span class="o">:</span> <span class="s2">&quot;५&quot;</span><span class="p">,</span>
@@ -218,14 +218,12 @@
             <span class="s2">&quot;Latitude&quot;</span><span class="o">:</span> <span class="s2">&quot;२७.६४&quot;</span><span class="p">,</span>
             <span class="s2">&quot;LocalTime&quot;</span><span class="o">:</span> <span class="s2">&quot;२०:४४&quot;</span>
         <span class="p">}]}</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Finally - widget based on above JSON file. <a href="http://himalkhabar.com" title="target=&quot;_blank">HimalKhabar</a> has embedded it in its website.</p>
 <iframe src=http://app-weather.rhcloud.com/data/earthquake/ width="270" height="410" frameborder="0">Browser not compatible.</iframe>
 
 <blockquote class="twitter-tweet" lang="en"><p lang="ne" dir="ltr">भूकम्पको लाइभ अपडेट <a href="http://t.co/yfbJgjRYxA">http://t.co/yfbJgjRYxA</a> मा ।</p>&mdash; Himal Khabar (@Himal_Khabar) <a href="https://twitter.com/Himal_Khabar/status/600229390790721538">May 18, 2015</a></blockquote>
-
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <footer class="post-footer">
@@ -260,27 +258,23 @@
             <h4 class="post-footer-heading">Spread the word</h4>
             <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
             <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
-            <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            <!-- <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a> -->
           </div>
         </footer>
       </section>
 
-    <div class="comments">
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = "rvibekblog"; // required: replace example with your forum shortname
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+  <section class="post-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_identifier = "json-file-for-seismic-activities-in-nepal-EN.html";
+      var disqus_url = "./json-file-for-seismic-activities-in-nepal-EN.html";
+      (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://rvibekblog.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
 
     </article>
 
@@ -322,7 +316,7 @@
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>

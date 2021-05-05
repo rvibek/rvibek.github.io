@@ -20,6 +20,7 @@
 
 
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!-- <link href="./" rel="shortcut icon" type="image/x-icon"> -->
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
@@ -38,7 +39,7 @@
     <script src="./theme/js/scripts.js"></script>
 
 
-        <link href="https://rvibek.com.np/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="rvibek Atom Feed" />
+        <link href="https://rvibek.co.np/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="rvibek Atom Feed" />
 
   </head>
   <body class="">
@@ -106,6 +107,7 @@
 <section class="wrapper wrapper-post">
   <div class="wrapper-container">
     <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post ">
+
       <section class="post-container">
         <header class="post-header">
 <ul class="post-meta-list">
@@ -130,7 +132,7 @@
         <aside class="post-side">
           <div class="post-author">
             <div class="post-author-info">
-              <img src="https://res.cloudinary.com/rvibek-com-np/image/upload/c_scale,w_100/v1525895320/vibek_raj_maurya_cir_dt99eo.png"/>
+              <img src="https://res.cloudinary.com/rvibek-com-np/image/upload/c_scale,w_100/v1618400153/circle-cropped_4_dgiful.png"/>
               <a href="./author/vibek-raj-maurya.html" class="post-author-name">
                 Vibek Raj Maurya
               </a>
@@ -144,61 +146,59 @@
 <p>The scripts available in my <a href="https://github.com/rvibek/Data-from-Google-Maps">GitRepo</a></p>
 <p>And here's are the saved results in Gist. <a href="https://gist.github.com/rvibek/e5aea8a9396ad10d5b8d42562c53cf08">Nepalese Restaurants in Europe</a>. Interestingly, there are almost 80 Nepalese restaurants in Finland. </p>
 <p>The script uses 3 libraries. <code>time</code> is needed to delay the API call. Google has a limitation on request per second. </p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">time</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>The next is declare the varible and load first JSON</p>
-<div class="highlight"><pre><span></span># Declare API Key &amp; Query
-key = &#39;AIzaSyXXX-XXXX&#39;
-query = &#39;Nepalese+Restaurants+Finland&#39;
-url = &#39;https://maps.googleapis.com/maps/api/place/textsearch/json?query=&#39; + str(query) + &#39;&amp;key=&#39; + str(key)
+<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="k">Declare</span> <span class="n">API</span> <span class="k">Key</span> <span class="o">&amp;</span> <span class="n">Query</span>
+<span class="k">key</span> <span class="o">=</span> <span class="s1">&#39;AIzaSyXXX-XXXX&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;Nepalese+Restaurants+Finland&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://maps.googleapis.com/maps/api/place/textsearch/json?query=&#39;</span> <span class="o">+</span> <span class="n">str</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&amp;key=&#39;</span> <span class="o">+</span> <span class="n">str</span><span class="p">(</span><span class="k">key</span><span class="p">)</span>
 
-# Parse JSON
-jsonfile = requests.get(url)
-f = jsonfile.json()
-</pre></div>
-
+<span class="o">#</span> <span class="n">Parse</span> <span class="n">JSON</span>
+<span class="n">jsonfile</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">jsonfile</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
 
 <p>The below function recursively populates the result.</p>
-<div class="highlight"><pre><span></span># Recursive Function
-def getjson(url, pagetoken, key, query):
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="k">Recursive</span><span class="w"> </span><span class="k">Function</span><span class="w"></span>
+<span class="n">def</span><span class="w"> </span><span class="n">getjson</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">pagetoken</span><span class="p">,</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
 
-    time.sleep(3)  # API has requests per second limitation
+<span class="w">    </span><span class="nc">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">requests</span><span class="w"> </span><span class="n">per</span><span class="w"> </span><span class="k">second</span><span class="w"> </span><span class="n">limitation</span><span class="w"></span>
 
-    if pagetoken == &#39;&#39;:
-        print(&#39;url&#39;, url)
-        pass
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">pagetoken</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="err">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">pass</span><span class="w"></span>
 
-    else:
+<span class="w">    </span><span class="k">else</span><span class="err">:</span><span class="w"></span>
 
-        print(&#39;e1url&#39;, url)
+<span class="w">        </span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;e1url&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"></span>
 
-        # Reset URL
-        url = &#39;https://maps.googleapis.com/maps/api/place/textsearch/json?query=&#39; + str(query) + &#39;&amp;key=&#39; + str(key)
-        url = url + &#39;&amp;pagetoken=&#39; + pagetoken
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">Reset</span><span class="w"> </span><span class="n">URL</span><span class="w"></span>
+<span class="w">        </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://maps.googleapis.com/maps/api/place/textsearch/json?query=&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">str</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&amp;key=&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">str</span><span class="p">(</span><span class="k">key</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&amp;pagetoken=&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pagetoken</span><span class="w"></span>
 
-        jsonfile = requests.get(url)
-        f = jsonfile.json()
+<span class="w">        </span><span class="n">jsonfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">requests</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jsonfile</span><span class="p">.</span><span class="n">json</span><span class="p">()</span><span class="w"></span>
 
-        # append array with desired data from JSON
-        for count, name in enumerate(f[&#39;results&#39;]):
-            names.append((f[&#39;results&#39;][count][&#39;name&#39;]))
-            address.append(f[&#39;results&#39;][count][&#39;formatted_address&#39;])
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">append</span><span class="w"> </span><span class="k">array</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">desired</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">JSON</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="nf">count</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">enumerate</span><span class="p">(</span><span class="n">f</span><span class="o">[</span><span class="n">&#39;results&#39;</span><span class="o">]</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="w">            </span><span class="k">names</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="n">f</span><span class="o">[</span><span class="n">&#39;results&#39;</span><span class="o">][</span><span class="n">count</span><span class="o">][</span><span class="n">&#39;name&#39;</span><span class="o">]</span><span class="p">))</span><span class="w"></span>
+<span class="w">            </span><span class="n">address</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">[</span><span class="n">&#39;results&#39;</span><span class="o">][</span><span class="n">count</span><span class="o">][</span><span class="n">&#39;formatted_address&#39;</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
 
-        # print(f) #DEBUG
-        # Assign NEW Page Token
-        try:
-            pagetoken = f[&#39;next_page_token&#39;]
-        except KeyError:
-            pagetoken = &#39;&#39;
-        pass
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="n">#DEBUG</span><span class="w"></span>
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">Assign</span><span class="w"> </span><span class="k">NEW</span><span class="w"> </span><span class="n">Page</span><span class="w"> </span><span class="n">Token</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="err">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">pagetoken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="o">[</span><span class="n">&#39;next_page_token&#39;</span><span class="o">]</span><span class="w"></span>
+<span class="w">        </span><span class="ow">except</span><span class="w"> </span><span class="nl">KeyError</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">pagetoken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="n">pass</span><span class="w"></span>
 
-        # Recursive call
-        getjson(url, pagetoken, key, query)
-</pre></div>
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="k">Recursive</span><span class="w"> </span><span class="k">call</span><span class="w"></span>
+<span class="w">        </span><span class="n">getjson</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">pagetoken</span><span class="p">,</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
         </div>
         <footer class="post-footer">
           <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
@@ -232,27 +232,23 @@ def getjson(url, pagetoken, key, query):
             <h4 class="post-footer-heading">Spread the word</h4>
             <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
             <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
-            <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            <!-- <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a> -->
           </div>
         </footer>
       </section>
 
-    <div class="comments">
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = "rvibekblog"; // required: replace example with your forum shortname
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+  <section class="post-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_identifier = "extracting-data-from-google-maps-.html";
+      var disqus_url = "./extracting-data-from-google-maps-.html";
+      (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://rvibekblog.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
 
     </article>
 
@@ -294,7 +290,7 @@ def getjson(url, pagetoken, key, query):
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>

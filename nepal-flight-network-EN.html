@@ -20,6 +20,7 @@
 
 
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!-- <link href="./" rel="shortcut icon" type="image/x-icon"> -->
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
@@ -38,7 +39,7 @@
     <script src="./theme/js/scripts.js"></script>
 
 
-        <link href="https://rvibek.com.np/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="rvibek Atom Feed" />
+        <link href="https://rvibek.co.np/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="rvibek Atom Feed" />
 
   </head>
   <body class="">
@@ -106,6 +107,7 @@
 <section class="wrapper wrapper-post">
   <div class="wrapper-container">
     <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post ">
+
       <section class="post-container">
         <header class="post-header">
 <ul class="post-meta-list">
@@ -133,7 +135,7 @@
         <aside class="post-side">
           <div class="post-author">
             <div class="post-author-info">
-              <img src="https://res.cloudinary.com/rvibek-com-np/image/upload/c_scale,w_100/v1525895320/vibek_raj_maurya_cir_dt99eo.png"/>
+              <img src="https://res.cloudinary.com/rvibek-com-np/image/upload/c_scale,w_100/v1618400153/circle-cropped_4_dgiful.png"/>
               <a href="./author/vibek-raj-maurya.html" class="post-author-name">
                 Vibek Raj Maurya
               </a>
@@ -147,24 +149,22 @@
 <p>As for now I have flight network in the simplest form. I aggregated the flight connection data from <a href="http://travelandtourtonepal.com/ticketing/domestic-flight-in-nepal&quot; target=&quot;_blank">TravelandTourNepal</a> and airport data from <a href="http://en.wikipedia.org/wiki/List_of_airports_in_Nepal&quot; target=&quot;_blank">Wikipedia – Airport in Nepal</a>. I loaded the resulting two files in <a href="http://www.r-project.org/">R</a> and fiddled with <a href="http://cran.r-project.org/web/packages/maps/index.html&quot; target=&quot;_blank">map library</a>.</p>
 <p><a href="http://i0.wp.com/res.cloudinary.com/rvibek-com-np/image/upload/v1423914262/FlightNetwork_ahrp5v.png" title="Flight Network"><img alt="FlightNetwork Nepal" src="https://i0.wp.com/res.cloudinary.com/rvibek-com-np/image/upload/v1423914262/FlightNetwork_ahrp5v.png?resize=605%2C305"></a></p>
 <p><strong>flights.csv</strong></p>
-<div class="highlight"><pre><span></span><span class="n">airline</span><span class="p">,</span><span class="n">airport1</span><span class="p">,</span><span class="n">airport2</span><span class="p">,</span><span class="n">cnt</span> 
+<div class="highlight"><pre><span></span><code><span class="n">airline</span><span class="p">,</span><span class="n">airport1</span><span class="p">,</span><span class="n">airport2</span><span class="p">,</span><span class="n">cnt</span> 
 <span class="n">ALL</span><span class="p">,</span><span class="n">KTM</span><span class="p">,</span><span class="n">BDP</span><span class="p">,</span><span class="mi">300</span> 
 <span class="n">ALL</span><span class="p">,</span><span class="n">KTM</span><span class="p">,</span><span class="n">BWA</span><span class="p">,</span><span class="mi">500</span>
 <span class="n">ALL</span><span class="p">,</span><span class="n">KTM</span><span class="p">,</span><span class="n">BHR</span><span class="p">,</span><span class="mi">500</span> 
 <span class="n">ALL</span><span class="p">,</span><span class="n">KTM</span><span class="p">,</span><span class="n">BIR</span><span class="p">,</span><span class="mi">900</span>
-</pre></div>
-
+</code></pre></div>
 
 <p><strong>airports.csv</strong></p>
-<div class="highlight"><pre><span></span><span class="n">iata</span><span class="p">,</span><span class="n">airport</span><span class="p">,</span><span class="n">city</span><span class="p">,</span><span class="n">state</span><span class="p">,</span><span class="n">country</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="nb">long</span>
+<div class="highlight"><pre><span></span><code><span class="n">iata</span><span class="p">,</span><span class="n">airport</span><span class="p">,</span><span class="n">city</span><span class="p">,</span><span class="n">state</span><span class="p">,</span><span class="n">country</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">long</span>
 <span class="n">KTM</span><span class="p">,</span><span class="n">TribhuwanAirport</span><span class="p">,</span><span class="n">Kathmandu</span><span class="p">,</span><span class="n">BG</span><span class="p">,</span><span class="n">Nepal</span><span class="p">,</span><span class="mf">27.6963889</span><span class="p">,</span><span class="mf">85.3588889</span> 
 <span class="n">PKR</span><span class="p">,</span><span class="n">PokharaAiport</span><span class="p">,</span><span class="n">Pokhara</span><span class="p">,</span><span class="n">GD</span><span class="p">,</span><span class="n">Nepal</span><span class="p">,</span><span class="mf">28.2008333</span><span class="p">,</span><span class="mf">83.9819444</span> 
 <span class="n">BWA</span><span class="p">,</span><span class="n">GautamBuddha</span><span class="p">,</span><span class="n">Bhairahawa</span><span class="p">,</span><span class="n">LM</span><span class="p">,</span><span class="n">Nepal</span><span class="p">,</span><span class="mf">27.5055556</span><span class="p">,</span><span class="mf">83.4161111</span>
-</pre></div>
-
+</code></pre></div>
 
 <p><strong>R programme</strong></p>
-<div class="highlight"><pre><span></span><span class="n">library</span><span class="p">(</span><span class="s1">&#39;maps&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">library</span><span class="p">(</span><span class="s1">&#39;maps&#39;</span><span class="p">)</span>
 <span class="n">library</span><span class="p">(</span><span class="s1">&#39;geosphere&#39;</span><span class="p">)</span>
 <span class="n">library</span><span class="p">(</span><span class="s1">&#39;mapdata&#39;</span><span class="p">)</span>
 
@@ -187,12 +187,12 @@
   <span class="n">air1</span> <span class="o">&lt;-</span> <span class="n">airports</span><span class="p">[</span><span class="n">airports</span><span class="err">$</span><span class="n">iata</span> <span class="o">==</span> <span class="n">fsub</span><span class="p">[</span><span class="n">j</span><span class="p">,]</span><span class="err">$</span><span class="n">airport1</span><span class="p">,]</span>
   <span class="n">air2</span> <span class="o">&lt;-</span> <span class="n">airports</span><span class="p">[</span><span class="n">airports</span><span class="err">$</span><span class="n">iata</span> <span class="o">==</span> <span class="n">fsub</span><span class="p">[</span><span class="n">j</span><span class="p">,]</span><span class="err">$</span><span class="n">airport2</span><span class="p">,]</span>
 
-  <span class="n">inter</span> <span class="o">&lt;-</span> <span class="n">gcIntermediate</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">air1</span><span class="p">[</span><span class="mi">1</span><span class="p">,]</span><span class="err">$</span><span class="nb">long</span><span class="p">,</span> <span class="n">air1</span><span class="p">[</span><span class="mi">1</span><span class="p">,]</span><span class="err">$</span><span class="n">lat</span><span class="p">),</span> <span class="n">c</span><span class="p">(</span><span class="n">air2</span><span class="p">[</span><span class="mi">1</span><span class="p">,]</span><span class="err">$</span><span class="nb">long</span><span class="p">,</span> <span class="n">air2</span><span class="p">[</span><span class="mi">1</span><span class="p">,]</span><span class="err">$</span><span class="n">lat</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">addStartEnd</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+  <span class="n">inter</span> <span class="o">&lt;-</span> <span class="n">gcIntermediate</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">air1</span><span class="p">[</span><span class="mi">1</span><span class="p">,]</span><span class="err">$</span><span class="n">long</span><span class="p">,</span> <span class="n">air1</span><span class="p">[</span><span class="mi">1</span><span class="p">,]</span><span class="err">$</span><span class="n">lat</span><span class="p">),</span> <span class="n">c</span><span class="p">(</span><span class="n">air2</span><span class="p">[</span><span class="mi">1</span><span class="p">,]</span><span class="err">$</span><span class="n">long</span><span class="p">,</span> <span class="n">air2</span><span class="p">[</span><span class="mi">1</span><span class="p">,]</span><span class="err">$</span><span class="n">lat</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">addStartEnd</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
   <span class="n">colindex</span> <span class="o">&lt;-</span> <span class="nb">round</span><span class="p">(</span> <span class="p">(</span><span class="n">fsub</span><span class="p">[</span><span class="n">j</span><span class="p">,]</span><span class="err">$</span><span class="n">cnt</span> <span class="o">/</span> <span class="n">maxcnt</span><span class="p">)</span> <span class="o">*</span> <span class="n">length</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span> <span class="p">)</span>
 
   <span class="n">lines</span><span class="p">(</span><span class="n">inter</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">colindex</span><span class="p">],</span> <span class="n">lwd</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
         </div>
         <footer class="post-footer">
           <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
@@ -226,27 +226,23 @@
             <h4 class="post-footer-heading">Spread the word</h4>
             <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
             <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
-            <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            <!-- <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a> -->
           </div>
         </footer>
       </section>
 
-    <div class="comments">
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = "rvibekblog"; // required: replace example with your forum shortname
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+  <section class="post-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_identifier = "nepal-flight-network-EN.html";
+      var disqus_url = "./nepal-flight-network-EN.html";
+      (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://rvibekblog.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
 
     </article>
 
@@ -288,7 +284,7 @@
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
