@@ -152,14 +152,14 @@
 </code></pre></div>
 
 <p>The next is declare the varible and load first JSON</p>
-<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="k">Declare</span> <span class="n">API</span> <span class="k">Key</span> <span class="o">&amp;</span> <span class="n">Query</span>
-<span class="k">key</span> <span class="o">=</span> <span class="s1">&#39;AIzaSyXXX-XXXX&#39;</span>
-<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;Nepalese+Restaurants+Finland&#39;</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://maps.googleapis.com/maps/api/place/textsearch/json?query=&#39;</span> <span class="o">+</span> <span class="n">str</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&amp;key=&#39;</span> <span class="o">+</span> <span class="n">str</span><span class="p">(</span><span class="k">key</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code># Declare API Key &amp; Query
+key = &#39;AIzaSyXXX-XXXX&#39;
+query = &#39;Nepalese+Restaurants+Finland&#39;
+url = &#39;https://maps.googleapis.com/maps/api/place/textsearch/json?query=&#39; + str(query) + &#39;&amp;key=&#39; + str(key)
 
-<span class="o">#</span> <span class="n">Parse</span> <span class="n">JSON</span>
-<span class="n">jsonfile</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">jsonfile</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+# Parse JSON
+jsonfile = requests.get(url)
+f = jsonfile.json()
 </code></pre></div>
 
 <p>The below function recursively populates the result.</p>
